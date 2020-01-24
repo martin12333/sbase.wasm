@@ -5,9 +5,9 @@ VERSION = 0.0
 PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 
-CC = cc
-AR = ar
-RANLIB = ranlib
+CC = emcc
+AR = emar
+RANLIB = emranlib
 
 # for NetBSD add -D_NETBSD_SOURCE
 # -lrt might be needed on some systems
