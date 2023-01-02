@@ -191,6 +191,14 @@ all: $(BIN)
 
 $(BIN): $(LIB) $(@:=.o)
 
+
+
+JS = $(BIN:=.js)
+$(JS): $(LIB) $(@:=.o)
+
+
+
+
 $(OBJ): $(HDR) config.mk
 
 .o:
