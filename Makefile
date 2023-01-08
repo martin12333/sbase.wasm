@@ -187,23 +187,38 @@ OBJ = $(BIN:=.o) $(LIBUTFOBJ) $(LIBUTILOBJ)
 SRC = $(BIN:=.c)
 MAN = $(BIN:=.1)
 
+
+
+JS = $(BIN:=.js)
+
+
+
 all: $(BIN)
+
+##all: $(JS)
 
 $(BIN): $(LIB) $(@:=.o)
 
 
-
-JS = $(BIN:=.js)
-$(JS): $(LIB) $(@:=.o)
-
-
-
-
-
 $(OBJ): $(HDR) config.mk
 
-.o:
-	$(CC) $(LDFLAGS) -o $@ $< $(LIB)
+
+# i am not sure  how to do it correctly
+##$(JS): $(LIB) $(@:=.o)
+####	$(CC)  $(LDFLAGS) -o $@   $(LIB)  $<
+
+
+% : %.o
+	$(CC) $(LDFLAGS) -o $(@:=.js) $< $(LIB)
+
+# experim5
+#% : %.o
+#	$(CC) $(LDFLAGS) -o $(@:=.html) $< $(LIB)
+
+
+#.o:
+#	$(CC) $(LDFLAGS) -o $@ $< $(LIB)
+
 
 .c.o:
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
