@@ -206,6 +206,10 @@ $(OBJ): $(HDR) config.mk
 mytest2:
 	echo $(TARGET_SUFFIX)
 
+	echo $(JS)
+	#
+#
+	echo $(WASM)
 
 
 #.o:
@@ -304,9 +308,10 @@ sbase-box-uninstall: uninstall
 	cd $(DESTDIR)$(PREFIX)/bin && rm -f sbase-box
 
 
-# TODO ~~wasm
+#
 clean:
-	rm -f $(BIN) $(OBJ) $(LIB) sbase-box sbase-$(VERSION).tar.gz
+	rm -f    $(JS)  $(WASM)           $(BIN) $(OBJ) $(LIB) sbase-box sbase-$(VERSION).tar.gz
+#	rm -f $(BIN) $(OBJ) $(LIB) sbase-box sbase-$(VERSION).tar.gz
 	rm -f getconf.h
 
 
