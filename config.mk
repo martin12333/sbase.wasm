@@ -6,10 +6,15 @@ PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 
 
+#CC = cc
+#AR = ar
+#RANLIB = ranlib
+
 
 #CC = emcc
 #AR = emar
 #RANLIB = emranlib
+
 
 mytest:
 	echo $(CC)
