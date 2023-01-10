@@ -11,6 +11,10 @@ MANPREFIX = $(PREFIX)/share/man
 #AR = emar
 #RANLIB = emranlib
 
+mytest:
+	echo $(CC)
+	echo $(AR)
+	echo $(RANLIB)
 
 
 # for NetBSD add -D_NETBSD_SOURCE
